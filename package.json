@@ -1,0 +1,45 @@
+{
+  "name": "flow-libdef",
+  "version": "1.0.0",
+  "description": "This application help to install flow dependencies using the version installed in project.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "babel src -d bin",
+    "build-watch": "babel src -d bin --watch",
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bin/*/**"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "flow-libdef": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscomorais/goflow.git"
+  },
+  "keywords": [
+    "flow",
+    "flow-typed"
+  ],
+  "author": "Francisco Morais <francisco.luis.morais@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franciscomorais/goflow/issues"
+  },
+  "homepage": "https://github.com/franciscomorais/goflow#readme",
+  "dependencies": {
+    "async-exec": "^1.1.0",
+    "commander": "^2.18.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.18.4"
+  }
+}
