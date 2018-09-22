@@ -8,7 +8,7 @@ import {
   flowCreateStub,
   installFlowDependency,
   yarnList
-} from '../utils';
+} from 'utils';
 
 /**
  * Messages.
