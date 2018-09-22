@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-import { install } from './commands';
+import { install } from 'commands';
 import program from 'commander';
 
 /**
