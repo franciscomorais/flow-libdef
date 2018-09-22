@@ -11,6 +11,9 @@
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": true
+    }],
+    ["module-resolver", {
+      "root": ["./src"]
     }]
   ]
 }
