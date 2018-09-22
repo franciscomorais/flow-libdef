@@ -3,7 +3,12 @@
  */
 
 import { get } from 'lodash';
-import exec from 'async-exec';
+import {
+  checkLibrary,
+  flowCreateStub,
+  installFlowDependency,
+  yarnList
+} from '../utils';
 
 /**
  * Messages.
@@ -15,62 +20,6 @@ const messages = {
   somethingWrong: library => console.log(`\nSomething went wrong while installing ${library} flow dependency`),
   successful: library => console.log(`\nThe library ${library} was installed successfully.\n`)
 }
-
-/**
- * `yarnList` command.
- */
-
-async function yarnList(library) {
-  const output = await exec(`yarn list ${library} --json`);
-
-  return JSON.parse(output);
-};
-
-/**
- * `installFlowDependency` command.
- */
-
-async function installFlowDependency(library) {
-  try {
-    return await exec(`flow-typed install ${library}`);
-  } catch(e) {
-    return false;
-  }
-}
-
-/**
- * `flowCreateStub` command.
- */
-
-async function flowCreateStub(library) {
-  try {
-    return await exec(`flow-typed create-stub ${library}`);
-  } catch(e) {
-    return false;
-  }
-}
-
-/**
- * `checkLibrary` util.
- */
-
-async function checkLibrary(library) {
-  const splitLibrary = library.split('@');
-
-  if (splitLibrary.length < 2) {
-    try {
-      const json = await yarnList(library);
-      const result = get(json, 'data.trees.0.name');
-
-      return result ? {
-        result,
-        splitLibrary: result ? result.split('@') : null
-      } : {};
-    } catch(e) {
-      return null;
-    }
-  }
-};
 
 /**
  * Export `install` command.
