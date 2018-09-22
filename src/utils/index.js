@@ -2,12 +2,12 @@
  * Module dependencies.
  */
 
-import { checkLibrary } from './parsers';
+import { checkLibrary } from 'utils/parsers';
 import {
   flowCreateStub,
   installFlowDependency,
   yarnList
-} from './shell-commands';
+} from 'utils/shell-commands';
 
 /**
  * Module exports.

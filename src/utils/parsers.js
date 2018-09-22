@@ -3,7 +3,7 @@
  */
 
 import { get } from 'lodash';
-import { yarnList } from './shell-commands';
+import { yarnList } from 'utils/shell-commands';
 
 /**
  * Export `checkLibrary` util.
