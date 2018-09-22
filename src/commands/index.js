@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-import install from './install';
+import install from 'commands/install';
 
 /**
  * Export modules.
