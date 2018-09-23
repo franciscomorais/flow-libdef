@@ -1,5 +1,12 @@
 # flow-libdef
 
+
+![npm](https://img.shields.io/npm/v/node-readme.svg)
+![node (tag)](https://img.shields.io/node/v/passport/latest.svg)
+![license](https://img.shields.io/npm/l/node-readme.svg)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg)
+![github-issues](https://img.shields.io/github/issues/revolunet/node-readme.svg)
+![CircleCI token](https://img.shields.io/circleci/circleci/token/:token/project/:vcsType/:owner/:repo/:branch.svg)
 [![CircleCI](https://circleci.com/gh/franciscomorais/flow-libdef.svg?style=svg)](https://circleci.com/gh/franciscomorais/flow-libdef)
 
 Utility to install a flow dependency. It tries to install the lib dependency but if it doen't find it, will be creates a stub.
