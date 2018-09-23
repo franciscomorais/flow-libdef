@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.checkLibrary = undefined;
+exports.checkLibrary = exports.parseYarnResult = undefined;
 
 var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
@@ -13,26 +13,21 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
  * Export `checkLibrary` util.
  */
 
-/**
- * Module dependencies.
- */
-
 let checkLibrary = exports.checkLibrary = (() => {
   var _ref = (0, _asyncToGenerator3.default)(function* (library) {
+    if (!library) {
+      return null;
+    }
+
     const splitLibrary = library.split('@');
+    const libraryName = splitLibrary.length >= 2 ? splitLibrary[0] : library;
 
-    if (splitLibrary.length < 2) {
-      try {
-        const json = yield (0, _shellCommands.yarnList)(library);
-        const result = (0, _lodash.get)(json, 'data.trees.0.name');
+    try {
+      const json = yield (0, _shellCommands.yarnList)(libraryName);
 
-        return result ? {
-          result,
-          splitLibrary: result ? result.split('@') : null
-        } : {};
-      } catch (e) {
-        return null;
-      }
+      return parseYarnResult(json);
+    } catch (e) {
+      return null;
     }
   });
 
@@ -47,4 +42,20 @@ var _shellCommands = require('./shell-commands');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-;
+/**
+ * Export `parseYarnResult` util.
+ */
+
+/**
+ * Module dependencies.
+ */
+
+const parseYarnResult = exports.parseYarnResult = data => {
+  const result = (0, _lodash.get)(data, 'data.trees.0.name');
+  const splitLibrary = result ? result.split('@') : [];
+
+  return result ? {
+    result,
+    splitLibrary: splitLibrary.length === 2 ? splitLibrary : null
+  } : {};
+};;
