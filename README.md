@@ -1,19 +1,16 @@
 # flow-libdef
 
-
-![npm](https://img.shields.io/npm/v/node-readme.svg)
-![node (tag)](https://img.shields.io/node/v/passport/latest.svg)
-![license](https://img.shields.io/npm/l/node-readme.svg)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg)
-![github-issues](https://img.shields.io/github/issues/revolunet/node-readme.svg)
-![CircleCI token](https://img.shields.io/circleci/circleci/token/:token/project/:vcsType/:owner/:repo/:branch.svg)
-[![CircleCI](https://circleci.com/gh/franciscomorais/flow-libdef.svg?style=svg)](https://circleci.com/gh/franciscomorais/flow-libdef)
+[![npm version](https://img.shields.io/npm/v/flow-libdef.svg?style=flat)](https://www.npmjs.com/package/flow-libdef)
+[![NpmLicense](https://img.shields.io/npm/l/flow-libdef.svg)](https://www.npmjs.com/package/flow-libdef)
+![CircleCI (all branches)](https://img.shields.io/circleci/project/github/franciscomorais/flow-libdef.svg)
+![GitHub issues](https://img.shields.io/github/issues/franciscomorais/flow-libdef.svg)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/franciscomorais/flow-libdef.svg)
 
 Utility to install a flow dependency. It tries to install the lib dependency but if it doen't find it, will be creates a stub.
 
 ## Dependencies
 
-- node 6.x
+- node 8.x
 - yarn
 - flow-typed
 
