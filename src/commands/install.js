@@ -10,16 +10,8 @@ import {
   yarnList
 } from 'utils';
 
-/**
- * Messages.
- */
+import { messages } from 'locale';
 
-const messages = {
-  cantReadVersion: library => console.log(`\nERR: Something wrong. I can't read name and version of ${result}\n`),
-  libraryNotFound: library => console.log(`\nERR: ${library} not found. Are you sure this library is installed?\n`),
-  somethingWrong: library => console.log(`\nSomething went wrong while installing ${library} flow dependency`),
-  successful: library => console.log(`\nThe library ${library} was installed successfully.\n`)
-}
 
 /**
  * Export `install` command.
@@ -31,7 +23,7 @@ export default async function(library, options) {
   if (!libraryData) {
     messages.libraryNotFound(library);
 
-    return;
+    return false;
   }
 
   const { result, splitLibrary } = libraryData;
@@ -39,7 +31,7 @@ export default async function(library, options) {
   if (!splitLibrary || splitLibrary.length !== 2) {
     messages.cantReadVersion(result);
 
-    return;
+    return false;
   }
 
   try {
@@ -51,7 +43,7 @@ export default async function(library, options) {
       if (!(tryCreateStub)) {
         messages.somethingWrong(result);
 
-        return;
+        return false;
       } else {
         console.log(tryCreateStub);
       }
@@ -60,7 +52,11 @@ export default async function(library, options) {
     }
 
     messages.successful(result);
+
+    return true;
   } catch(e) {
     messages.somethingWrong(result);
+
+    return false;
   }
 };
