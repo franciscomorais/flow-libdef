@@ -1,5 +1,7 @@
 # flow-libdef
 
+[![CircleCI](https://circleci.com/gh/franciscomorais/flow-libdef.svg?style=svg)](https://circleci.com/gh/franciscomorais/flow-libdef)
+
 Utility to install a flow dependency. It tries to install the lib dependency but if it doen't find it, will be creates a stub.
 
 ## Dependencies
