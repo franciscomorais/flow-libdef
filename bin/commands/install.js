@@ -12,35 +12,22 @@ var _lodash = require('lodash');
 
 var _utils = require('../utils');
 
+var _locale = require('../locale');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Messages.
+ * Export `install` command.
  */
 
-/**
- * Module dependencies.
- */
-
-const messages = {
-  cantReadVersion: library => console.log(`\nERR: Something wrong. I can't read name and version of ${result}\n`),
-  libraryNotFound: library => console.log(`\nERR: ${library} not found. Are you sure this library is installed?\n`),
-  somethingWrong: library => console.log(`\nSomething went wrong while installing ${library} flow dependency`),
-  successful: library => console.log(`\nThe library ${library} was installed successfully.\n`)
-
-  /**
-   * Export `install` command.
-   */
-
-};
 exports.default = (() => {
   var _ref = (0, _asyncToGenerator3.default)(function* (library, options) {
     const libraryData = yield (0, _utils.checkLibrary)(library);
 
     if (!libraryData) {
-      messages.libraryNotFound(library);
+      _locale.messages.libraryNotFound(library);
 
-      return;
+      return false;
     }
 
     const result = libraryData.result,
@@ -48,9 +35,9 @@ exports.default = (() => {
 
 
     if (!splitLibrary || splitLibrary.length !== 2) {
-      messages.cantReadVersion(result);
+      _locale.messages.cantReadVersion(result);
 
-      return;
+      return false;
     }
 
     try {
@@ -60,9 +47,9 @@ exports.default = (() => {
         const tryCreateStub = yield (0, _utils.flowCreateStub)(result);
 
         if (!tryCreateStub) {
-          messages.somethingWrong(result);
+          _locale.messages.somethingWrong(result);
 
-          return;
+          return false;
         } else {
           console.log(tryCreateStub);
         }
@@ -70,13 +57,19 @@ exports.default = (() => {
         console.log(installationResult);
       }
 
-      messages.successful(result);
+      _locale.messages.successful(result);
+
+      return true;
     } catch (e) {
-      messages.somethingWrong(result);
+      _locale.messages.somethingWrong(result);
+
+      return false;
     }
   });
 
   return function (_x, _x2) {
     return _ref.apply(this, arguments);
   };
-})();
+})(); /**
+       * Module dependencies.
+       */
