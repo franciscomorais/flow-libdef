@@ -36,7 +36,7 @@ I hope this helps you in this process.
 
 ### Thanks
 
-- [bsontag](https://github.com/bsonntag) - Benjamim Sonntag
+- [bsonntag](https://github.com/bsonntag) - Benjamim Sonntag
 
 ## Contributing
 
