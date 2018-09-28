@@ -3,8 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/flow-libdef.svg?style=flat)](https://www.npmjs.com/package/flow-libdef)
 [![NpmLicense](https://img.shields.io/npm/l/flow-libdef.svg)](https://www.npmjs.com/package/flow-libdef)
 [![CircleCI (all branches)](https://img.shields.io/circleci/project/github/franciscomorais/flow-libdef.svg)](https://circleci.com/gh/franciscomorais/flow-libdef)
-![GitHub issues](https://img.shields.io/github/issues/franciscomorais/flow-libdef.svg)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/franciscomorais/flow-libdef.svg)
+[![GitHub issues](https://img.shields.io/github/issues/franciscomorais/flow-libdef.svg)](https://github.com/franciscomorais/flow-libdef/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/franciscomorais/flow-libdef.svg)](https://github.com/franciscomorais/flow-libdef/pulls)
 
 Utility to install a flow dependency that tries to install the lib dependency but if it doesn't find it, will create a stub.
 
