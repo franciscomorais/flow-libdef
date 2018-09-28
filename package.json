@@ -1,6 +1,6 @@
 {
   "name": "flow-libdef",
-  "version": "1.0.8",
+  "version": "1.0.12",
   "description": "This application help to install flow dependencies using the version installed in project.",
   "main": "src/index.js",
   "scripts": {
@@ -11,7 +11,11 @@
     "coverage": "jest --collectCoverageFrom=src/**.js --coverage"
   },
   "files": [
-    "bin/*/**"
+    "bin/*",
+    ".babelrc",
+    "LICENSE",
+    "README.md",
+    "package.json"
   ],
   "preferGlobal": true,
   "bin": {
@@ -34,15 +38,15 @@
   "dependencies": {
     "async-exec": "^1.1.0",
     "commander": "^2.18.0",
-    "lodash": "^4.17.11"
-  },
-  "devDependencies": {
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.4",
     "babel-cli": "^6.26.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.4"
+    "babel-preset-stage-2": "^6.24.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
   }
 }
