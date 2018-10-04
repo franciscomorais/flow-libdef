@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/franciscomorais/goflow.git"
+    "url": "https://github.com/franciscomorais/flow-libdef.git"
   },
   "keywords": [
     "flow",
@@ -32,9 +32,9 @@
   "author": "Francisco Morais <francisco.luis.morais@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/franciscomorais/goflow/issues"
+    "url": "https://github.com/franciscomorais/flow-libdef/issues"
   },
-  "homepage": "https://github.com/franciscomorais/goflow#readme",
+  "homepage": "https://github.com/franciscomorais/flow-libdef#readme",
   "dependencies": {
     "async-exec": "^1.1.0",
     "commander": "^2.18.0",
