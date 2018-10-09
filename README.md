@@ -39,6 +39,7 @@ I hope this helps you in this process.
 ### Thanks
 
 - [bsonntag](https://github.com/bsonntag) - Benjamim Sonntag
+- [nunorafaelrocha](https://github.com/nunorafaelrocha) - Nuno Rafael Rocha
 
 ## Contributing
 
