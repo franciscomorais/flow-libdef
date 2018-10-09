@@ -5,13 +5,14 @@
  */
 
 import { install } from 'commands';
+import { version } from '../package.json';
 import program from 'commander';
 
 /**
  * Version.
  */
 
-program.version('1.0.0');
+program.version(version);
 
 /**
  * `install` command.
