@@ -2,12 +2,16 @@
  * Module dependencies.
  */
 
-import install from 'commands/install';
+import install from './install';
+import installAll from './install-all';
+
+
 
 /**
- * Export modules.
+ * Export modules.s
  */
 
 module.exports = {
-  install
+  install,
+  installAll
 };
