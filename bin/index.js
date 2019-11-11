@@ -3,6 +3,8 @@
 
 var _commands = require('./commands');
 
+var _package = require('../package.json');
+
 var _commander = require('commander');
 
 var _commander2 = _interopRequireDefault(_commander);
@@ -13,17 +15,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Version.
  */
 
-/**
- * Module dependencies.
- */
-
-_commander2.default.version('1.0.0');
+_commander2.default.version(_package.version);
 
 /**
  * `install` command.
  */
 
+/**
+ * Module dependencies.
+ */
+
 _commander2.default.command('install [library]').description('run this command to install flow-typed dependency').action(_commands.install);
+
+/**
+ * `check` command.
+ */
+
+_commander2.default.command('install-all').description('run this command to check all flow-typed dependencies').action(_commands.installAll);
 
 /**
  * Show help if no pass any command.
